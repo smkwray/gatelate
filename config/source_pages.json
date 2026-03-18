@@ -1,0 +1,40 @@
+{
+  "page_urls": {
+    "airline_ytd_summary_page": {
+      "page_url": "https://www.bts.gov/year-date-airline-time-performance-each-month-reporting-carrier",
+      "current_example_xlsx": "https://www.bts.gov/sites/bts.dot.gov/files/2026-02/Table%201A%20-%20Reporting%20Operating%20Carrier%20Summary%20of%20Airline%20On-Time%20Performance%20fom%201995%20Year-to-Date%20November%202025.xlsx"
+    },
+    "airline_monthly_ranking_page": {
+      "page_url": "https://www.bts.gov/ranking-airline-time-performance-month-1995-reporting-carrier",
+      "current_example_xlsx": "https://www.bts.gov/sites/bts.dot.gov/files/2026-02/Table%202A%20-%20Ranking%20of%20Reporting%20Operating%20Carrier%20On-Time%20Performance%20by%20Month%20Since%201995%20November%202025.xlsx"
+    },
+    "airport_arrival_monthly_page": {
+      "page_url": "https://www.bts.gov/monthly-ranking-major-airport-time-arrival-performance",
+      "current_example_xlsx": "https://www.bts.gov/sites/bts.dot.gov/files/2026-02/Table%203%20-%20Ranking%20of%20Major%20Airport%20On-Time%20Arrival%20Performance%20November%202025.xlsx"
+    },
+    "airport_arrival_ytd_page": {
+      "page_url": "https://www.bts.gov/table-4-ranking-major-airport-time-arrival-performance-year-date",
+      "current_example_xlsx": "https://www.bts.gov/sites/bts.dot.gov/files/2026-02/Table%204%20-%20Ranking%20of%20Major%20Airport%20On-Time%20Arrival%20Performance%20Year-to-date%20November%202025.xlsx"
+    },
+    "airport_arrival_annual_page": {
+      "page_url": "https://www.bts.gov/annual-time-arrival-rankings-major-airports",
+      "current_example_xlsx": "https://www.bts.gov/sites/bts.dot.gov/files/2025-03/Table%204%20Ranking%20of%20Major%20Airport%20On-Time%20Arrival%20Performance%20Year-to-date%20through%20December%202003-Dec%202024.xlsx"
+    },
+    "airport_departure_monthly_page": {
+      "page_url": "https://www.bts.gov/monthly-ranking-major-airport-time-departure-performance",
+      "current_example_xlsx": "https://www.bts.gov/sites/bts.dot.gov/files/2026-02/Table%205%20-%20Ranking%20of%20Major%20Airport%20On-Time%20Departure%20Performance%20November%202025.xlsx"
+    },
+    "airport_departure_ytd_page": {
+      "page_url": "https://www.bts.gov/table-6-ranking-major-airport-time-departure-performance-year-date",
+      "current_example_xlsx": "https://www.bts.gov/sites/bts.dot.gov/files/2026-02/Table%206%20-%20Ranking%20of%20Major%20Airport%20On-Time%20Departure%20Year-to-date%20November%202025.xlsx"
+    },
+    "airport_departure_annual_page": {
+      "page_url": "https://www.bts.gov/annual-time-departure-performance",
+      "current_example_xlsx": "https://www.bts.gov/sites/bts.dot.gov/files/2025-03/Table%206%20Ranking%20of%20Major%20Airport%20On-Time%20Departure%20Performance%20Year-to-date%20December%202003-Dec%202024.xlsx"
+    }
+  },
+  "optional_phase_two": {
+    "transtats_download_page": "https://www.transtats.bts.gov/DL_SelectFields.aspx?QO_fu146_anzr=b0-gvzr&gnoyr_VQ=FGJ",
+    "master_coordinate_support_page": "https://transtats.bts.gov/DL_SelectFields.aspx?QO_fu146_anzr=N8vn6v10+f722146+gnoyr5&gnoyr_VQ=FLL"
+  }
+}

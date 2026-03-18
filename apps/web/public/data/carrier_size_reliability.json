@@ -1,0 +1,122 @@
+[
+  {
+    "carrier":"WN",
+    "carrier_name":"Southwest Airlines",
+    "flights":116059,
+    "on_time_pct":78.75
+  },
+  {
+    "carrier":"DL",
+    "carrier_name":"Delta Air Lines Network",
+    "flights":86078,
+    "on_time_pct":81.21
+  },
+  {
+    "carrier":"AA",
+    "carrier_name":"American Airlines Network",
+    "flights":80652,
+    "on_time_pct":75.33
+  },
+  {
+    "carrier":"OO",
+    "carrier_name":"SkyWest Airlines Inc.",
+    "flights":71473,
+    "on_time_pct":79.22
+  },
+  {
+    "carrier":"UA",
+    "carrier_name":"United Air Lines Network",
+    "flights":67767,
+    "on_time_pct":78.38
+  },
+  {
+    "carrier":"YX",
+    "carrier_name":"Republic Airline",
+    "flights":30981,
+    "on_time_pct":73.75
+  },
+  {
+    "carrier":"MQ",
+    "carrier_name":"Envoy Air",
+    "flights":25946,
+    "on_time_pct":79.03
+  },
+  {
+    "carrier":"OH",
+    "carrier_name":"PSA Airlines Inc.",
+    "flights":20521,
+    "on_time_pct":73.18
+  },
+  {
+    "carrier":"B6",
+    "carrier_name":"JetBlue Airways",
+    "flights":20459,
+    "on_time_pct":73.52
+  },
+  {
+    "carrier":"9E",
+    "carrier_name":"Endeavor Air Inc.",
+    "flights":20236,
+    "on_time_pct":75.41
+  },
+  {
+    "carrier":"AS",
+    "carrier_name":"Alaska Airlines Network",
+    "flights":20082,
+    "on_time_pct":80.17
+  },
+  {
+    "carrier":"F9",
+    "carrier_name":"Frontier Airlines",
+    "flights":17403,
+    "on_time_pct":74.84
+  },
+  {
+    "carrier":"PT",
+    "carrier_name":"Piedmont Airlines",
+    "flights":12601,
+    "on_time_pct":86.29
+  },
+  {
+    "carrier":"NK",
+    "carrier_name":"Spirit Airlines",
+    "flights":12073,
+    "on_time_pct":77.26
+  },
+  {
+    "carrier":"G4",
+    "carrier_name":"Allegiant Air",
+    "flights":9764,
+    "on_time_pct":76.36
+  },
+  {
+    "carrier":"QX",
+    "carrier_name":"Horizon Air",
+    "flights":8324,
+    "on_time_pct":82.16
+  },
+  {
+    "carrier":"G7",
+    "carrier_name":"GoJet Airlines LLC d\/b\/a United Express",
+    "flights":7484,
+    "on_time_pct":63.42
+  },
+  {
+    "carrier":"C5",
+    "carrier_name":"CommuteAir LLC dba CommuteAir",
+    "flights":6916,
+    "on_time_pct":80.7
+  },
+  {
+    "carrier":"HA",
+    "carrier_name":"Hawaiian Airlines Network",
+    "flights":6558,
+    "on_time_pct":80.3
+  },
+  {
+    "carrier":"YV",
+    "carrier_name":"Mesa Airlines Inc.",
+    "flights":6370,
+    "on_time_pct":82.81
+  }
+]

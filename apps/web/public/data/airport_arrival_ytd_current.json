@@ -1,0 +1,272 @@
+[
+  {
+    "rank":1,
+    "airport_name":"Salt Lake City, UT",
+    "airport_code":"SLC",
+    "on_time_pct":84.69,
+    "period":"arrival_ytd",
+    "direction":"arrival",
+    "period_type":"ytd"
+  },
+  {
+    "rank":2,
+    "airport_name":"Minneapolis\/St. Paul, MN",
+    "airport_code":"MSP",
+    "on_time_pct":81.32,
+    "period":"arrival_ytd",
+    "direction":"arrival",
+    "period_type":"ytd"
+  },
+  {
+    "rank":3,
+    "airport_name":"Los Angeles, CA",
+    "airport_code":"LAX",
+    "on_time_pct":80.92,
+    "period":"arrival_ytd",
+    "direction":"arrival",
+    "period_type":"ytd"
+  },
+  {
+    "rank":4,
+    "airport_name":"Detroit, MI",
+    "airport_code":"DTW",
+    "on_time_pct":80.76,
+    "period":"arrival_ytd",
+    "direction":"arrival",
+    "period_type":"ytd"
+  },
+  {
+    "rank":5,
+    "airport_name":"Atlanta, GA",
+    "airport_code":"ATL",
+    "on_time_pct":79.96,
+    "period":"arrival_ytd",
+    "direction":"arrival",
+    "period_type":"ytd"
+  },
+  {
+    "rank":6,
+    "airport_name":"Phoenix, AZ",
+    "airport_code":"PHX",
+    "on_time_pct":79.63,
+    "period":"arrival_ytd",
+    "direction":"arrival",
+    "period_type":"ytd"
+  },
+  {
+    "rank":7,
+    "airport_name":"Charlotte, NC",
+    "airport_code":"CLT",
+    "on_time_pct":79.57,
+    "period":"arrival_ytd",
+    "direction":"arrival",
+    "period_type":"ytd"
+  },
+  {
+    "rank":8,
+    "airport_name":"Washington, DC",
+    "airport_code":"IAD",
+    "on_time_pct":79.57,
+    "period":"arrival_ytd",
+    "direction":"arrival",
+    "period_type":"ytd"
+  },
+  {
+    "rank":9,
+    "airport_name":"Chicago, IL",
+    "airport_code":"MDW",
+    "on_time_pct":79.52,
+    "period":"arrival_ytd",
+    "direction":"arrival",
+    "period_type":"ytd"
+  },
+  {
+    "rank":10,
+    "airport_name":"Baltimore, MD",
+    "airport_code":"BWI",
+    "on_time_pct":79.16,
+    "period":"arrival_ytd",
+    "direction":"arrival",
+    "period_type":"ytd"
+  },
+  {
+    "rank":11,
+    "airport_name":"Seattle, WA",
+    "airport_code":"SEA",
+    "on_time_pct":78.7,
+    "period":"arrival_ytd",
+    "direction":"arrival",
+    "period_type":"ytd"
+  },
+  {
+    "rank":12,
+    "airport_name":"Houston, TX",
+    "airport_code":"IAH",
+    "on_time_pct":78.68,
+    "period":"arrival_ytd",
+    "direction":"arrival",
+    "period_type":"ytd"
+  },
+  {
+    "rank":13,
+    "airport_name":"Las Vegas, NV",
+    "airport_code":"LAS",
+    "on_time_pct":78.4,
+    "period":"arrival_ytd",
+    "direction":"arrival",
+    "period_type":"ytd"
+  },
+  {
+    "rank":14,
+    "airport_name":"Nashville, TN",
+    "airport_code":"BNA",
+    "on_time_pct":76.86,
+    "period":"arrival_ytd",
+    "direction":"arrival",
+    "period_type":"ytd"
+  },
+  {
+    "rank":15,
+    "airport_name":"Austin, TX",
+    "airport_code":"AUS",
+    "on_time_pct":76.48,
+    "period":"arrival_ytd",
+    "direction":"arrival",
+    "period_type":"ytd"
+  },
+  {
+    "rank":16,
+    "airport_name":"New York, NY",
+    "airport_code":"JFK",
+    "on_time_pct":76.14,
+    "period":"arrival_ytd",
+    "direction":"arrival",
+    "period_type":"ytd"
+  },
+  {
+    "rank":17,
+    "airport_name":"Miami, FL",
+    "airport_code":"MIA",
+    "on_time_pct":75.73,
+    "period":"arrival_ytd",
+    "direction":"arrival",
+    "period_type":"ytd"
+  },
+  {
+    "rank":18,
+    "airport_name":"San Francisco, CA",
+    "airport_code":"SFO",
+    "on_time_pct":75.65,
+    "period":"arrival_ytd",
+    "direction":"arrival",
+    "period_type":"ytd"
+  },
+  {
+    "rank":19,
+    "airport_name":"Fort Lauderdale, FL",
+    "airport_code":"FLL",
+    "on_time_pct":75.56,
+    "period":"arrival_ytd",
+    "direction":"arrival",
+    "period_type":"ytd"
+  },
+  {
+    "rank":20,
+    "airport_name":"Denver, CO",
+    "airport_code":"DEN",
+    "on_time_pct":75.49,
+    "period":"arrival_ytd",
+    "direction":"arrival",
+    "period_type":"ytd"
+  },
+  {
+    "rank":21,
+    "airport_name":"Orlando, FL",
+    "airport_code":"MCO",
+    "on_time_pct":75.13,
+    "period":"arrival_ytd",
+    "direction":"arrival",
+    "period_type":"ytd"
+  },
+  {
+    "rank":22,
+    "airport_name":"San Diego, CA",
+    "airport_code":"SAN",
+    "on_time_pct":75.03,
+    "period":"arrival_ytd",
+    "direction":"arrival",
+    "period_type":"ytd"
+  },
+  {
+    "rank":23,
+    "airport_name":"Tampa, FL",
+    "airport_code":"TPA",
+    "on_time_pct":75.02,
+    "period":"arrival_ytd",
+    "direction":"arrival",
+    "period_type":"ytd"
+  },
+  {
+    "rank":24,
+    "airport_name":"Philadelphia, PA",
+    "airport_code":"PHL",
+    "on_time_pct":74.44,
+    "period":"arrival_ytd",
+    "direction":"arrival",
+    "period_type":"ytd"
+  },
+  {
+    "rank":25,
+    "airport_name":"Chicago, IL",
+    "airport_code":"ORD",
+    "on_time_pct":73.8,
+    "period":"arrival_ytd",
+    "direction":"arrival",
+    "period_type":"ytd"
+  },
+  {
+    "rank":26,
+    "airport_name":"New York, NY",
+    "airport_code":"LGA",
+    "on_time_pct":72.68,
+    "period":"arrival_ytd",
+    "direction":"arrival",
+    "period_type":"ytd"
+  },
+  {
+    "rank":27,
+    "airport_name":"Boston, MA",
+    "airport_code":"BOS",
+    "on_time_pct":72.66,
+    "period":"arrival_ytd",
+    "direction":"arrival",
+    "period_type":"ytd"
+  },
+  {
+    "rank":28,
+    "airport_name":"Dallas\/Fort Worth, TX",
+    "airport_code":"DFW",
+    "on_time_pct":72.45,
+    "period":"arrival_ytd",
+    "direction":"arrival",
+    "period_type":"ytd"
+  },
+  {
+    "rank":29,
+    "airport_name":"Newark, NJ",
+    "airport_code":"EWR",
+    "on_time_pct":70.18,
+    "period":"arrival_ytd",
+    "direction":"arrival",
+    "period_type":"ytd"
+  },
+  {
+    "rank":30,
+    "airport_name":"Washington, DC",
+    "airport_code":"DCA",
+    "on_time_pct":68.44,
+    "period":"arrival_ytd",
+    "direction":"arrival",
+    "period_type":"ytd"
+  }
+]
