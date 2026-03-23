@@ -9,6 +9,8 @@ import pytest
 
 from scripts.validate_data import EXPECTED_SCHEMAS
 
+pytestmark = pytest.mark.integration
+
 
 def _assert_record_match(expected: dict[str, object], actual: dict[str, object]) -> None:
     """Compare two JSON-style records field by field with float tolerance."""

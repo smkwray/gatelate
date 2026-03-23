@@ -107,6 +107,41 @@ EXPECTED_SCHEMAS: dict[str, list[str]] = {
     ],
 }
 
+EXPECTED_ANALYSIS_SCHEMAS: dict[str, list[str]] = {
+    "carrier_seasonal.json": [
+        "carrier",
+        "carrier_name",
+        "month",
+        "avg_on_time_pct",
+        "sample_months",
+    ],
+    "carrier_delay_causes.json": [
+        "carrier",
+        "carrier_name",
+        "total_delay_min",
+        "carrier_delay_pct",
+        "weather_delay_pct",
+        "nas_delay_pct",
+        "security_delay_pct",
+        "late_aircraft_delay_pct",
+        "controllable_delay_pct",
+    ],
+    "carrier_size_reliability.json": [
+        "carrier",
+        "carrier_name",
+        "flights",
+        "on_time_pct",
+    ],
+    "airport_carrier_matrix.json": [
+        "airport",
+        "airport_name",
+        "carrier",
+        "carrier_name",
+        "flights",
+        "on_time_pct",
+    ],
+}
+
 
 def load_processed_frames(processed_dir: Path = PROCESSED_DIR) -> dict[str, pd.DataFrame]:
     """Load the expected curated Parquet datasets keyed by file name."""

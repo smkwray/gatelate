@@ -82,6 +82,17 @@ export interface AirportCarrierMatrix {
   on_time_pct: number;
 }
 
+export interface DataMeta {
+  report_year: number;
+  report_month: number;
+  report_month_label: string;
+  report_month_short: string;
+  report_ytd_label: string;
+  transtats_range_label: string;
+  bts_airport_annual_start: number;
+  generated_at: string;
+}
+
 export interface AirportAnnual {
   rank: number;
   airport_name: string;

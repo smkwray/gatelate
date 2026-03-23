@@ -1,7 +1,11 @@
 """Integration tests for curated dataset validation rules."""
 from __future__ import annotations
 
+import pytest
+
 from scripts import validate_data
+
+pytestmark = pytest.mark.integration
 
 
 def test_carrier_monthly_percentage_sums_within_tolerance(processed_frames: dict[str, object]) -> None:

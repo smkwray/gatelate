@@ -8,11 +8,18 @@ import type {
   AirportCarrierMatrix,
   AirportSnapshot,
   AirportAnnual,
+  DataMeta,
 } from "./types";
 
 const BASE = import.meta.env.BASE_URL + "data/";
 
 async function load<T>(file: string): Promise<T[]> {
+  const res = await fetch(BASE + file);
+  if (!res.ok) throw new Error(`Failed to load ${file}: ${res.status}`);
+  return res.json();
+}
+
+async function loadSingle<T>(file: string): Promise<T> {
   const res = await fetch(BASE + file);
   if (!res.ok) throw new Error(`Failed to load ${file}: ${res.status}`);
   return res.json();
@@ -31,3 +38,4 @@ export const loadAirportArrivalAnnual = () => load<AirportAnnual>("airport_arriv
 export const loadAirportDepartureMonth = () => load<AirportSnapshot>("airport_departure_current_month.json");
 export const loadAirportDepartureYtd = () => load<AirportSnapshot>("airport_departure_ytd_current.json");
 export const loadAirportDepartureAnnual = () => load<AirportAnnual>("airport_departure_annual_history.json");
+export const loadDataMeta = () => loadSingle<DataMeta>("data_meta.json");

@@ -19,9 +19,14 @@ export default function Carriers() {
   const [data, setData] = useState<CarrierMonthly[]>([]);
   const [view, setView] = useState<"trends" | "rankings">("trends");
   const [selectedCodes, setSelectedCodes] = useState<string[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    loadCarrierMonthly().then(setData);
+    loadCarrierMonthly()
+      .then(setData)
+      .catch((err) => setError(String(err)))
+      .finally(() => setLoading(false));
   }, []);
 
   const allCodes = useMemo(
@@ -34,6 +39,13 @@ export default function Carriers() {
     const maxYear = Math.max(...data.map((d) => d.year));
     const maxMonth = Math.max(...data.filter((d) => d.year === maxYear).map((d) => d.month));
     return { year: maxYear, month: maxMonth };
+  }, [data]);
+
+  const earliestMonth = useMemo(() => {
+    if (!data.length) return { year: 0, month: 0 };
+    const minYear = Math.min(...data.map((d) => d.year));
+    const minMonth = Math.min(...data.filter((d) => d.year === minYear).map((d) => d.month));
+    return { year: minYear, month: minMonth };
   }, [data]);
 
   const latestData = useMemo(
@@ -68,9 +80,12 @@ export default function Carriers() {
     );
   };
 
-  const periodLabel = latestMonth.year
-    ? `Dec 2023\u2013${MONTHS[latestMonth.month - 1]} ${latestMonth.year}`
+  const periodLabel = latestMonth.year && earliestMonth.year
+    ? `${MONTHS[earliestMonth.month - 1]} ${earliestMonth.year}\u2013${MONTHS[latestMonth.month - 1]} ${latestMonth.year}`
     : "";
+
+  if (loading) return <div className="page"><p>Loading&hellip;</p></div>;
+  if (error) return <div className="page"><p className="error">Failed to load data.</p></div>;
 
   return (
     <div className="page">

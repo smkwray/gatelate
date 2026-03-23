@@ -19,6 +19,7 @@ import {
   loadCarrierDelayCauses,
   loadCarrierSizeReliability,
   loadAirportCarrierMatrix,
+  loadDataMeta,
 } from "../data";
 import SourceNote from "../components/SourceNote";
 import type {
@@ -26,6 +27,7 @@ import type {
   CarrierDelayCauses,
   CarrierSizeReliability,
   AirportCarrierMatrix,
+  DataMeta,
 } from "../types";
 
 const COLORS = ["#7dd3fc", "#c4b5fd", "#86efac", "#fca5a5", "#fde68a", "#f0abfc", "#67e8f9", "#fdba74"];
@@ -44,12 +46,20 @@ export default function Insights() {
   const [matrixCarrier, setMatrixCarrier] = useState("");
   const [matrixMode, setMatrixMode] = useState<"by-airport" | "by-carrier">("by-airport");
   const [matrixSearch, setMatrixSearch] = useState("");
+  const [meta, setMeta] = useState<DataMeta | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    loadCarrierSeasonal().then(setSeasonal);
-    loadCarrierDelayCauses().then(setCauses);
-    loadCarrierSizeReliability().then(setScatter);
-    loadAirportCarrierMatrix().then(setMatrix);
+    Promise.all([
+      loadCarrierSeasonal().then(setSeasonal),
+      loadCarrierDelayCauses().then(setCauses),
+      loadCarrierSizeReliability().then(setScatter),
+      loadAirportCarrierMatrix().then(setMatrix),
+      loadDataMeta().then(setMeta),
+    ])
+      .catch((err) => setError(String(err)))
+      .finally(() => setLoading(false));
   }, []);
 
   // --- Seasonal ---
@@ -143,6 +153,9 @@ export default function Insights() {
     [matrix, selectedCarrier]
   );
 
+  if (loading) return <div className="page"><p>Loading&hellip;</p></div>;
+  if (error) return <div className="page"><p className="error">Failed to load data.</p></div>;
+
   return (
     <div className="page">
       <header className="page-header">
@@ -205,7 +218,7 @@ export default function Insights() {
             </ResponsiveContainer>
           </div>
 
-          <SourceNote period="Dec 2023\u2013Nov 2025 (averaged)" table="TranStats: Airline Delay Cause Data" />
+          <SourceNote period={`${meta?.transtats_range_label ?? "\u2026"} (averaged)`} table="TranStats: Airline Delay Cause Data" />
         </section>
       )}
 
@@ -273,7 +286,7 @@ export default function Insights() {
             </table>
           </div>
 
-          <SourceNote period="Dec 2023\u2013Nov 2025" table="TranStats: Airline Delay Cause Data" />
+          <SourceNote period={meta?.transtats_range_label ?? "\u2026"} table="TranStats: Airline Delay Cause Data" />
         </section>
       )}
 
@@ -352,7 +365,7 @@ export default function Insights() {
             </table>
           </div>
 
-          <SourceNote period="Nov 2025" table="TranStats: Airline Delay Cause Data" />
+          <SourceNote period={meta?.report_month_short ?? "\u2026"} table="TranStats: Airline Delay Cause Data" />
         </section>
       )}
 
@@ -523,7 +536,7 @@ export default function Insights() {
             </>
           )}
 
-          <SourceNote period="Nov 2025" table="TranStats: Airline Delay Cause Data" />
+          <SourceNote period={meta?.report_month_short ?? "\u2026"} table="TranStats: Airline Delay Cause Data" />
         </section>
       )}
     </div>

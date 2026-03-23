@@ -63,15 +63,14 @@ export default function Methodology() {
         <h2>Update cadence</h2>
         <p>
           BTS typically publishes these workbooks approximately <strong>two months</strong> after
-          the reporting period. For example, November 2025 data was published in late January 2026.
-          This site reflects the latest available workbooks at the time of build.
+          the reporting period. This site reflects the latest available workbooks at the time of build.
         </p>
 
         <h2>What this is not</h2>
         <ul>
           <li>This is <strong>not</strong> a live flight tracker or real-time delay monitor.</li>
           <li>This does <strong>not</strong> cover individual routes or flight numbers.</li>
-          <li>This does <strong>not</strong> include every U.S. airport &mdash; only the ~30 major airports tracked by BTS in their summary tables.</li>
+          <li>The BTS summary tables (Tables 3&ndash;6) cover the <strong>~30 major airports</strong> designated by BTS for on-time ranking. The airport &times; carrier breakdowns on the Insights page use TranStats delay-cause data, which includes any airport-carrier pair with 100+ flights in the reporting month.</li>
           <li>This does <strong>not</strong> include international carriers unless they report to the DOT.</li>
         </ul>
 

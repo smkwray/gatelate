@@ -26,3 +26,9 @@ dev = [
 
 [tool.setuptools]
 py-modules = []
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+markers = [
+    "integration: requires processed Parquet/JSON data files",
+]

@@ -7,11 +7,17 @@ export default function Home() {
   const [ytd, setYtd] = useState<AirlineYtd[]>([]);
   const [topAirports, setTopAirports] = useState<AirportSnapshot[]>([]);
   const [carriers, setCarriers] = useState<CarrierMonthly[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    loadAirlineYtd().then(setYtd);
-    loadAirportArrivalMonth().then((d) => setTopAirports(d.slice(0, 5)));
-    loadCarrierMonthly().then(setCarriers);
+    Promise.all([
+      loadAirlineYtd().then(setYtd),
+      loadAirportArrivalMonth().then((d) => setTopAirports(d.slice(0, 5))),
+      loadCarrierMonthly().then(setCarriers),
+    ])
+      .catch((err) => setError(String(err)))
+      .finally(() => setLoading(false));
   }, []);
 
   const latest = ytd.length ? ytd[ytd.length - 1] : null;
@@ -37,6 +43,9 @@ export default function Home() {
   const carrierMonthLabel = topCarrier
     ? `${MONTHS[topCarrier.month - 1]} ${topCarrier.year}`
     : "";
+
+  if (loading) return <div className="page"><p>Loading&hellip;</p></div>;
+  if (error) return <div className="page"><p className="error">Failed to load data.</p></div>;
 
   return (
     <div className="page">

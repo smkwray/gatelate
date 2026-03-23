@@ -17,10 +17,11 @@ import {
   loadAirportDepartureMonth,
   loadAirportDepartureYtd,
   loadAirportDepartureAnnual,
+  loadDataMeta,
 } from "../data";
 import Leaderboard from "../components/Leaderboard";
 import SourceNote from "../components/SourceNote";
-import type { AirportSnapshot, AirportAnnual } from "../types";
+import type { AirportSnapshot, AirportAnnual, DataMeta } from "../types";
 
 const COLORS = ["#7dd3fc", "#c4b5fd", "#86efac", "#fca5a5", "#fde68a", "#f0abfc", "#67e8f9", "#fdba74"];
 
@@ -36,14 +37,22 @@ export default function Airports() {
   const [depMonth, setDepMonth] = useState<AirportSnapshot[]>([]);
   const [depYtd, setDepYtd] = useState<AirportSnapshot[]>([]);
   const [depAnnual, setDepAnnual] = useState<AirportAnnual[]>([]);
+  const [meta, setMeta] = useState<DataMeta | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    loadAirportArrivalMonth().then(setArrMonth);
-    loadAirportArrivalYtd().then(setArrYtd);
-    loadAirportArrivalAnnual().then(setArrAnnual);
-    loadAirportDepartureMonth().then(setDepMonth);
-    loadAirportDepartureYtd().then(setDepYtd);
-    loadAirportDepartureAnnual().then(setDepAnnual);
+    Promise.all([
+      loadAirportArrivalMonth().then(setArrMonth),
+      loadAirportArrivalYtd().then(setArrYtd),
+      loadAirportArrivalAnnual().then(setArrAnnual),
+      loadAirportDepartureMonth().then(setDepMonth),
+      loadAirportDepartureYtd().then(setDepYtd),
+      loadAirportDepartureAnnual().then(setDepAnnual),
+      loadDataMeta().then(setMeta),
+    ])
+      .catch((err) => setError(String(err)))
+      .finally(() => setLoading(false));
   }, []);
 
   const snapshotData = direction === "arrival"
@@ -97,7 +106,14 @@ export default function Airports() {
     ? (period === "month" ? "Table 3" : period === "ytd" ? "Table 4 (snapshot)" : "Table 4 (annual)")
     : (period === "month" ? "Table 5" : period === "ytd" ? "Table 6 (snapshot)" : "Table 6 (annual)");
 
-  const periodLabel = period === "month" ? "November 2025" : period === "ytd" ? "YTD November 2025" : `2004\u2013${latestYear}`;
+  const periodLabel = period === "month"
+    ? (meta?.report_month_label ?? "")
+    : period === "ytd"
+    ? (meta?.report_ytd_label ?? "")
+    : `${meta?.bts_airport_annual_start ?? 2004}\u2013${latestYear}`;
+
+  if (loading) return <div className="page"><p>Loading&hellip;</p></div>;
+  if (error) return <div className="page"><p className="error">Failed to load data.</p></div>;
 
   return (
     <div className="page">

@@ -44,7 +44,10 @@ def processed_frames() -> dict[str, pd.DataFrame]:
     """Load the expected processed Parquet datasets once per test session."""
     from scripts.validate_data import load_processed_frames
 
-    return load_processed_frames()
+    try:
+        return load_processed_frames()
+    except FileNotFoundError as exc:
+        pytest.skip(f"Processed data not available: {exc}")
 
 
 @pytest.fixture

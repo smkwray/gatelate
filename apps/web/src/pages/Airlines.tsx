@@ -23,16 +23,22 @@ export default function Airlines() {
   const [view, setView] = useState<"trend" | "monthly">("trend");
   const [yearFrom, setYearFrom] = useState(1995);
   const [yearTo, setYearTo] = useState(2025);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    loadAirlineYtd().then((d) => {
-      setYtd(d);
-      if (d.length) {
-        setYearFrom(d[0].year);
-        setYearTo(d[d.length - 1].year);
-      }
-    });
-    loadAirlineMonthly().then(setMonthly);
+    Promise.all([
+      loadAirlineYtd().then((d) => {
+        setYtd(d);
+        if (d.length) {
+          setYearFrom(d[0].year);
+          setYearTo(d[d.length - 1].year);
+        }
+      }),
+      loadAirlineMonthly().then(setMonthly),
+    ])
+      .catch((err) => setError(String(err)))
+      .finally(() => setLoading(false));
   }, []);
 
   const filteredYtd = useMemo(
@@ -68,6 +74,9 @@ export default function Airlines() {
 
   const yearMin = ytd.length ? ytd[0].year : 1995;
   const yearMax = ytd.length ? ytd[ytd.length - 1].year : 2025;
+
+  if (loading) return <div className="page"><p>Loading&hellip;</p></div>;
+  if (error) return <div className="page"><p className="error">Failed to load data.</p></div>;
 
   return (
     <div className="page">
