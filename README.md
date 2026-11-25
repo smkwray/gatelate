@@ -54,4 +54,4 @@ pnpm --dir apps/web dev              # start the frontend
 
 ## License
 
-This repository does not include a license yet.
+MIT. See [LICENSE](LICENSE).
