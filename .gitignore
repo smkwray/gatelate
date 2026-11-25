@@ -17,3 +17,5 @@ apps/web/dist/
 do/
 docs/
 *.egg-info/
+
+.private-denylist
